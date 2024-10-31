@@ -1,0 +1,23 @@
+{
+    "manifest_version": 3,
+    "name": "Memescope Description Viewer",
+    "version": "1.0",
+    "description": "View token descriptions on Memescope",
+    "permissions": [
+        "activeTab"
+    ],
+    "host_permissions": [
+        "https://photon-sol.tinyastro.io/*",
+        "https://frontend-api.pump.fun/*"
+    ],
+    "content_scripts": [
+        {
+            "matches": ["https://photon-sol.tinyastro.io/en/memescope*"],
+            "css": ["styles.css"],
+            "js": ["content.js"]
+        }
+    ],
+    "background": {
+        "service_worker": "background.js"
+    }
+}
