@@ -120,11 +120,15 @@
         const coins = document.querySelectorAll('.sBVBv2HePq7qYTpGDmRM');
         coins.forEach(addButtonToCoin);
 
+
+
+
+        // Create an observer to watch for new coins being added
         const observer = new MutationObserver((mutations) => {
             mutations.forEach((mutation) => {
-                mutation.addedNodes.forEach((node) => {
-                    if (node.nodeType === 1) {
-                        if (node.classList?.contains('sBVBv2HePq7qYTpGDmRM')) {
+                mutation.addedNodes.forEach((node) => { 
+                    if (node.nodeType === 1) { // Check if it's an element node
+                        if (node.classList?.contains('sBVBv2HePq7qYTpGDmRM')) { // Check if the node itself is a coin
                             addButtonToCoin(node);
                         }
                         const coinElements = node.querySelectorAll('.sBVBv2HePq7qYTpGDmRM');
